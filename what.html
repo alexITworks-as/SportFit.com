@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Яких помилок слід уникати під час тренувань на прес? - SportFit</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========== ARTICLE STYLES ========== */
+
+        /* Header Styles */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(224, 31, 122, 0.2);
+        }
+
+        header .logo {
+            flex-shrink: 0;
+        }
+
+        header .logo img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        header .nav nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        header .nav nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        header .nav nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #e01f7a;
+            transition: width 0.3s ease;
+        }
+
+        header .nav nav ul li a:hover {
+            color: #e01f7a;
+        }
+
+        header .nav nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Article Hero Section */
+        .article-hero {
+             background: linear-gradient(135deg, #1a1a1a 0%, #2d1a2d 100%);
+            padding: 120px 60px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(224, 31, 122, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .breadcrumb a {
+            color: #e01f7a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff3d8f;
+        }
+
+        .article-hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+
+        .article-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            flex-wrap: wrap;
+        }
+
+        /* Article Intro */
+        .article-intro {
+            padding: 80px 60px;
+            background-color: #1a1a1a;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-quote {
+            margin-bottom: 60px;
+        }
+
+        .intro-quote blockquote {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #fff;
+            padding: 32px;
+            border-left: 4px solid #e01f7a;
+            background-color: rgba(224, 31, 122, 0.08);
+            border-radius: 4px;
+            font-weight: 500;
+            animation: slideInLeft 0.8s ease;
+        }
+
+        .intro-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            animation: slideInRight 0.8s ease;
+        }
+
+        .intro-text em {
+            color: #e01f7a;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* Article Content */
+        .article-content {
+            background-color: #1a1a1a;
+            padding: 80px 60px;
+        }
+
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content-block {
+            margin-bottom: 80px;
+            animation: slideInUp 0.8s ease backwards;
+        }
+
+        .content-block:nth-child(1) { animation-delay: 0.1s; }
+        .content-block:nth-child(2) { animation-delay: 0.15s; }
+        .content-block:nth-child(3) { animation-delay: 0.2s; }
+        .content-block:nth-child(4) { animation-delay: 0.25s; }
+        .content-block:nth-child(5) { animation-delay: 0.3s; }
+
+        .section-number {
+            font-size: 64px;
+            font-weight: 700;
+            color: #e01f7a;
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .content-block h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 28px;
+            line-height: 1.3;
+        }
+
+        .content-block p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 28px 0;
+        }
+
+        .article-list li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            padding-left: 32px;
+            position: relative;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .article-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #e01f7a;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .article-list li:hover {
+            padding-left: 40px;
+            color: #e01f7a;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(224, 31, 122, 0.1) 0%, rgba(224, 31, 122, 0.05) 100%);
+            border-left: 4px solid #e01f7a;
+            padding: 28px;
+            border-radius: 4px;
+            margin: 28px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Article Conclusion */
+        .article-conclusion {
+            background: linear-gradient(135deg, rgba(224, 31, 122, 0.1) 0%, rgba(224, 31, 122, 0.05) 100%);
+            padding: 60px;
+            border-radius: 4px;
+            border: 1px solid rgba(224, 31, 122, 0.2);
+            margin-top: 80px;
+        }
+
+        .article-conclusion h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 28px;
+        }
+
+        .article-conclusion p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .article-cta {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a2d 100%);
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .article-cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .article-cta p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 48px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #e01f7a;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover {
+            background-color: #c41868;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(224, 31, 122, 0.4);
+            letter-spacing: 1.5px;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #e01f7a;
+            border: 2px solid #e01f7a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(224, 31, 122, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e01f7a;
+            color: #fff;
+            transform: translateY(-3px);
+            border-color: #c41868;
+        }
+
+        .btn-secondary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 40px 60px;
+            border-top: 1px solid rgba(224, 31, 122, 0.2);
+        }
+
+        footer .gridg {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+
+        footer .element {
+            text-align: center;
+        }
+
+        footer .element img {
+            height: 40px;
+            margin-bottom: 12px;
+            object-fit: contain;
+        }
+
+        footer .element p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer .element h3 {
+            font-size: 14px;
+            color: #fff;
+            margin: 8px 0;
+            font-weight: 600;
+        }
+
+        footer .social {
+            text-align: center;
+        }
+
+        footer .social p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer .img-social {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        footer .img-social img {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        footer .img-social img:hover {
+            transform: scale(1.1);
+        }
+
+        footer a {
+            background-color: #e01f7a;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        footer a:hover {
+            background-color: #c41868;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(224, 31, 122, 0.3);
+        }
+
+        footer a:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Tablet Responsive (768px and below) */
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 24px;
+            }
+
+            header .nav nav ul {
+                gap: 16px;
+            }
+
+            header .nav nav ul li a {
+                font-size: 12px;
+            }
+
+            header .logo img {
+                height: 40px;
+            }
+
+            .article-hero {
+                padding: 80px 40px;
+                min-height: auto;
+            }
+
+            .article-hero h1 {
+                font-size: 42px;
+                letter-spacing: 1px;
+            }
+
+            .article-subtitle {
+                font-size: 18px;
+            }
+
+            .article-meta {
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .article-intro,
+            .article-content {
+                padding: 60px 40px;
+            }
+
+            .intro-text p {
+                font-size: 15px;
+            }
+
+            .intro-quote blockquote {
+                font-size: 16px;
+                padding: 24px;
+            }
+
+            .content-block h2 {
+                font-size: 28px;
+            }
+
+            .content-block p,
+            .article-list li {
+                font-size: 15px;
+            }
+
+            .highlight-box h3 {
+                font-size: 16px;
+            }
+
+            .section-number {
+                font-size: 52px;
+            }
+
+            .article-conclusion {
+                padding: 40px 32px;
+            }
+
+            .article-conclusion h2 {
+                font-size: 28px;
+            }
+
+            .article-cta {
+                padding: 80px 40px;
+            }
+
+            .article-cta h2 {
+                font-size: 36px;
+            }
+
+            .article-cta p {
+                font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                padding: 16px 32px;
+                font-size: 13px;
+            }
+
+            footer {
+                padding: 32px 40px;
+            }
+
+            footer .gridg {
+                gap: 32px;
+            }
+        }
+
+        /* Mobile Responsive (480px and below) */
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 16px;
+                flex-wrap: wrap;
+            }
+
+            header .logo img {
+                height: 36px;
+            }
+
+            header .nav {
+                width: 100%;
+                margin-top: 12px;
+            }
+
+            header .nav nav ul {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+
+            header .nav nav ul li {
+                width: 100%;
+            }
+
+            header .nav nav ul li a {
+                display: block;
+                padding: 8px;
+                font-size: 11px;
+            }
+
+            .article-hero {
+                padding: 60px 20px;
+            }
+
+            .article-hero h1 {
+                font-size: 28px;
+                letter-spacing: 0.5px;
+                line-height: 1.3;
+            }
+
+            .article-subtitle {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+
+            .article-meta {
+                gap: 12px;
+                font-size: 12px;
+                flex-direction: column;
+            }
+
+            .breadcrumb {
+                font-size: 12px;
+            }
+
+            .article-intro,
+            .article-content {
+                padding: 40px 20px;
+            }
+
+            .intro-text p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .intro-quote blockquote {
+                font-size: 14px;
+                padding: 16px;
+                margin-bottom: 32px;
+            }
+
+            .content-block {
+                margin-bottom: 60px;
+            }
+
+            .content-block h2 {
+                font-size: 22px;
+                letter-spacing: 0.5px;
+                margin-bottom: 16px;
+            }
+
+            .content-block p,
+            .article-list li {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .article-list li {
+                padding-left: 24px;
+                margin-bottom: 8px;
+            }
+
+            .article-list li::before {
+                font-size: 16px;
+            }
+
+            .highlight-box {
+                padding: 16px;
+                margin: 20px 0;
+            }
+
+            .highlight-box h3 {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .section-number {
+                font-size: 48px;
+                margin-bottom: 12px;
+            }
+
+            .article-conclusion {
+                padding: 32px 20px;
+                margin-top: 60px;
+            }
+
+            .article-conclusion h2 {
+                font-size: 22px;
+                margin-bottom: 16px;
+            }
+
+            .article-conclusion p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .article-cta {
+                padding: 60px 20px;
+            }
+
+            .article-cta h2 {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+
+            .article-cta p {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 12px;
+                letter-spacing: 0px;
+            }
+
+            footer {
+                padding: 24px 16px;
+            }
+
+            footer .gridg {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            footer .element,
+            footer .social {
+                text-align: center;
+            }
+
+            footer a {
+                width: 100%;
+                padding: 10px 16px;
+                font-size: 11px;
+            }
+        }
+
+        /* Animations (from main style.css) */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/hero/Logo.png" alt="logo"></a>
+        </div>
+        <div class="nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html#cards">Клубні картки</a></li>
+                    <li><a href="index.html#team">Команда</a></li>
+                    <li><a href="index.html#about">Про нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Hero Section -->
+    <section class="article-hero">
+        <div class="article-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Головна</a> / Блог
+            </div>
+            <h1>Яких помилок слід уникати під час тренувань на прес?</h1>
+            <p class="article-subtitle">7 типових помилок, які заважають отримати рельєфний прес</p>
+            <div class="article-meta">
+                <span>📅 24 лютого 2026</span>
+                <span>⏱️ Час читання: 6 хв</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Intro Quote -->
+    <section class="article-intro">
+        <div class="intro-text">
+            <p>Багато людей тренують прес регулярно, але не бачать бажаного результату. Часто проблема не в тому, що ви мало стараєтесь, а в тому, що допускаєте <em>типові помилки</em>, які звужують ефективність тренувань. Давайте розберемся, на що звернути увагу.</p>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="article-container">
+            <!-- Section 1 -->
+            <article class="content-block">
+                <div class="section-number">01</div>
+                <h2>Перевірка здоров'я — перший крок</h2>
+                <p>Якщо жир переважно накопичується в області живота, варто звернути увагу на свій стан здоров'я. Часто проблема не в тому, що ви мало стараєтесь, а в тому, що організм сигналізує про можливі внутрішні порушення.</p>
+                
+                <div class="highlight-box">
+                    <h3>Що варто перевірити:</h3>
+                    <ul class="article-list">
+                        <li>Гормональний баланс</li>
+                        <li>Рівень кортизолу (гормон стресу)</li>
+                        <li>Функцію щитоподібної залози</li>
+                        <li>Рівень інсуліну та чутливість до нього</li>
+                    </ul>
+                </div>
+
+                <p>У деяких випадках саме гормональні збої ускладнюють процес зниження жиру. Тому консультація лікаря та базові аналізи можуть бути важливішими за ще один сет скручувань.</p>
+            </article>
+
+            <!-- Section 2 -->
+            <article class="content-block">
+                <div class="section-number">02</div>
+                <h2>Чому вправи не «спалюють» жир локально</h2>
+                <p>Багато людей роблять помилку, намагаючись «спалити» жир локально. Вони збільшують кількість вправ на прес, додають більше повторень, тренуються щодня, але живіт не стає рельєфним.</p>
+
+                <p><strong>Неможливо прибрати жир лише з живота, качаючи прес.</strong> Жир спалюється рівномірно по всьому тілу в процесі загального дефіциту калорій. Причина в тому, що організм — це цілісна система, і жирові відкладення не зникають лише від роботи над однією зоною.</p>
+
+                <p>Тренування пресу зміцнюють м'язи, але не гарантують видимого рельєфу без комплексного підходу.</p>
+            </article>
+
+            <!-- Section 3 -->
+            <article class="content-block">
+                <div class="section-number">03</div>
+                <h2>Стрес і сон — недооцінені фактори</h2>
+                <p>Багато людей забувають про один з найважливіших факторів успіху — якість сну та рівень стресу. Хронічний стрес підвищує рівень кортизолу, що може сприяти накопиченню жиру в області талії.</p>
+
+                <p>Недосип також впливає на гормони голоду та апетиту, що призводить до перехідного харчування і ускладнює дефіцит калорій.</p>
+
+                <div class="highlight-box">
+                    <h3>Базові правила доброго здоров'я:</h3>
+                    <ul class="article-list">
+                        <li>Спати 7–9 годин на ніч</li>
+                        <li>Зменшувати рівень стресу</li>
+                        <li>Підтримувати режим дня</li>
+                        <li>Практикувати медитацію або йогу</li>
+                    </ul>
+                </div>
+
+                <p>Без здорового сну і стресостійкості результати в залі будуть мінімальними.</p>
+            </article>
+
+            <!-- Section 4 -->
+            <article class="content-block">
+                <div class="section-number">04</div>
+                <h2>Комплексний підхід замість ізоляції</h2>
+                <p>Замість того щоб концентруватися тільки на пресі, потрібен комплексний підхід до тренувань і харчування:</p>
+
+                <ul class="article-list">
+                    <li>Додати базові силові вправи (присідання, тяги, жими)</li>
+                    <li>Включити помірне кардіо (2–3 рази на тиждень)</li>
+                    <li>Скоригувати харчування для дефіциту калорій</li>
+                    <li>Підтримувати баланс білків, жирів і вуглеводів</li>
+                    <li>Пити достатньо води</li>
+                </ul>
+
+                <p><strong>Тільки поєднання цих факторів дає стабільний результат.</strong> Організм змінюється кумулятивно, коли всі системи працюють у гармонії.</p>
+            </article>
+
+            <!-- Section 5 -->
+            <article class="content-block">
+                <div class="section-number">05</div>
+                <h2>Коли варто звернутися до спеціаліста</h2>
+                <p>Якщо ви дотримуєтесь харчування, регулярно тренуєтесь протягом 2–3 місяців, але жир в області живота не зменшується, це не сигнал збільшувати навантаження. Це сигнал <strong>перевірити стан здоров'я</strong>.</p>
+
+                <p>Іноді правильний крок — це не додаткове тренування, а своєчасна консультація з лікарем, ендокринологом або дієтологом. Фахівці допоможуть виявити приховані причини та скоригувати стратегію.</p>
+
+                <div class="highlight-box">
+                    <h3>До кого звернутися:</h3>
+                    <ul class="article-list">
+                        <li>Лікар-терапевт (базова діагностика)</li>
+                        <li>Ендокринолог (гормони)</li>
+                        <li>Дієтолог (корекція харчування)</li>
+                        <li>Тренер зі спеціалізацією (програмування тренувань)</li>
+                    </ul>
+                </div>
+
+                <p>Правильна діагностика часто економить місяці марних спроб.</p>
+            </article>
+
+            <!-- Conclusion -->
+            <article class="article-conclusion">
+                <h2>Висновок</h2>
+                <p>Тренування на прес — це не про кількість повторень, а про <strong>правильну стратегію</strong>. Уникайте цих семи типових помилок, працюйте системно, поєднуйте тренування з дисципліною у харчуванні — і тоді рельєфний прес стане питанням часу, а не випадковості.</p>
+
+                <p>Пам'ятайте: вели не бачите результатів — змініть підхід, а не прикладайте більше сили. 💪</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="article-cta">
+        <div class="cta-content">
+            <h2>Бажаєте безпечного та ефективного тренування?</h2>
+            <p>Наші досвідчені тренери розробляють індивідуальні програми з урахуванням правильної техніки та вашого рівня підготовки</p>
+            <div class="cta-buttons">
+                <a href="index.html#team" class="btn-primary">Записатися на консультацію</a>
+                <a href="index.html#about" class="btn-secondary">Дізнатися більше</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="gridg">
+            <div class="element">
+                <img src="img/svg/phone.svg" alt="phone">
+                <p>Телефон:</p>
+                <h3>(098) 700 55 55</h3>
+            </div>
+            <div class="element">
+                <img src="img/svg/geo.svg" alt="geo">
+                <p>Локація:</p>
+                <h3>Кривий Ріг, вул. Єдності, 6</h3>
+            </div>
+            <div class="element">
+                <img src="img/svg/clock.svg" alt="geo">
+                <p>Графік роботи:</p>
+                <h3>Пн-Пт 7:00-20:00</h3>
+                <h3>Сб 9:00-19:00</h3>
+                <h3>Нд 09:00-18:00</h3>
+            </div>
+            <div class="social">
+                <p>Фітнес-тусовка:</p>
+                <div class="img-social">
+                    <img src="img/svg/inst.svg" alt="instagram">
+                    <img src="img/svg/faceb.svg" alt="facebook">
+                </div>
+            </div>
+            <a href="#team">Записатися</a>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

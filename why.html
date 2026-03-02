@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чому не виходить отримати кубики на животі? - SportFit</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========== ARTICLE STYLES ========== */
+
+        /* Article Hero Section */
+        .article-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a2d 100%);
+            padding: 120px 60px;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(224, 31, 122, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .breadcrumb a {
+            color: #e01f7a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff3d8f;
+        }
+
+        .article-hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+
+        .article-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            flex-wrap: wrap;
+        }
+
+        /* Article Intro */
+        .article-intro {
+            padding: 80px 60px;
+            background-color: #1a1a1a;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-quote {
+            margin-bottom: 60px;
+        }
+
+        .intro-quote blockquote {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #fff;
+            padding: 32px;
+            border-left: 4px solid #e01f7a;
+            background-color: rgba(224, 31, 122, 0.08);
+            border-radius: 4px;
+            font-weight: 500;
+            animation: slideInLeft 0.8s ease;
+        }
+
+        .intro-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            animation: slideInRight 0.8s ease;
+        }
+
+        .intro-text em {
+            color: #e01f7a;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* Article Content */
+        .article-content {
+            background-color: #1a1a1a;
+            padding: 80px 60px;
+        }
+
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content-block {
+            margin-bottom: 80px;
+            animation: slideInUp 0.8s ease backwards;
+        }
+
+        .content-block:nth-child(1) { animation-delay: 0.1s; }
+        .content-block:nth-child(2) { animation-delay: 0.15s; }
+        .content-block:nth-child(3) { animation-delay: 0.2s; }
+        .content-block:nth-child(4) { animation-delay: 0.25s; }
+        .content-block:nth-child(5) { animation-delay: 0.3s; }
+        .content-block:nth-child(6) { animation-delay: 0.35s; }
+
+        .section-number {
+            font-size: 64px;
+            font-weight: 700;
+            color: #e01f7a;
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .content-block h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 28px;
+            line-height: 1.3;
+        }
+
+        .content-block p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 28px 0;
+        }
+
+        .article-list li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            padding-left: 32px;
+            position: relative;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .article-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #e01f7a;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .article-list li:hover {
+            padding-left: 40px;
+            color: #e01f7a;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(224, 31, 122, 0.1) 0%, rgba(224, 31, 122, 0.05) 100%);
+            border-left: 4px solid #e01f7a;
+            padding: 28px;
+            border-radius: 4px;
+            margin: 28px 0;
+        }
+
+        .highlight-box h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Reasons Grid */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .reason-item {
+            background-color: rgba(224, 31, 122, 0.1);
+            padding: 28px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(224, 31, 122, 0.2);
+        }
+
+        .reason-item:hover {
+            background-color: rgba(224, 31, 122, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(224, 31, 122, 0.2);
+        }
+
+        .reason-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .reason-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* Article Conclusion */
+        .article-conclusion {
+            background: linear-gradient(135deg, rgba(224, 31, 122, 0.1) 0%, rgba(224, 31, 122, 0.05) 100%);
+            padding: 60px;
+            border-radius: 4px;
+            border: 1px solid rgba(224, 31, 122, 0.2);
+            margin-top: 80px;
+        }
+
+        .article-conclusion h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 28px;
+        }
+
+        .article-conclusion p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .conclusion-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            padding: 40px;
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 4px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+            min-width: 120px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #e01f7a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .step h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .arrow {
+            color: #e01f7a;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .article-cta {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a2d 100%);
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .article-cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .article-cta p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 48px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #e01f7a;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover {
+            background-color: #c41868;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(224, 31, 122, 0.4);
+            letter-spacing: 1.5px;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #e01f7a;
+            border: 2px solid #e01f7a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(224, 31, 122, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e01f7a;
+            color: #fff;
+            transform: translateY(-3px);
+            border-color: #c41868;
+        }
+
+        .btn-secondary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .article-hero {
+                padding: 60px 24px;
+                min-height: auto;
+            }
+
+            .article-hero h1 {
+                font-size: 36px;
+            }
+
+            .article-subtitle {
+                font-size: 16px;
+            }
+
+            .article-intro,
+            .article-content {
+                padding: 60px 24px;
+            }
+
+            .intro-quote blockquote {
+                font-size: 16px;
+                padding: 24px;
+            }
+
+            .content-block h2 {
+                font-size: 24px;
+            }
+
+            .article-conclusion {
+                padding: 40px 24px;
+            }
+
+            .conclusion-steps {
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            .reasons-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 16px;
+            }
+
+            .article-cta {
+                padding: 60px 24px;
+            }
+
+            .article-cta h2 {
+                font-size: 28px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+
+        /* Animations (from main style.css) */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/hero/Logo.png" alt="logo"></a>
+        </div>
+        <div class="nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html#cards">Клубні картки</a></li>
+                    <li><a href="index.html#team">Команда</a></li>
+                    <li><a href="index.html#about">Про нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Hero Section -->
+    <section class="article-hero">
+        <div class="article-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Головна</a> / Блог
+            </div>
+            <h1>Чому не виходить отримати кубики на животі?</h1>
+            <p class="article-subtitle">Комплексний підхід до тренування преса: від підготовки до результату</p>
+            <div class="article-meta">
+                <span>📅 24 лютого 2026</span>
+                <span>⏱️ Час читання: 5 хв</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Intro Quote -->
+    <section class="article-intro">
+        <div class="intro-quote">
+            <blockquote>
+                Щоб досягти крутого результату, нам потрібна комплексна робота: харчування + тренування з ефективним набором вправ. Все потрібно робити крок за кроком. Для початку потрібно пройти підготовчий етап тренувань. Що є правильним першочерговим кроком, який дозволить правильно вибудувати усі процеси в організмі та підготувати до трішки важчих навантажень.
+            </blockquote>
+        </div>
+        <div class="intro-text">
+            <p>Багато хто задається питанням: <em>чому не виходить отримати кубики на животі?</em> Людина качає прес щодня, робить сотні повторень, але результат або мінімальний, або його немає зовсім. Причина проста — прес не з'являється лише від вправ на прес.</p>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="article-container">
+            <!-- Section 1 -->
+            <article class="content-block">
+                <div class="section-number">01</div>
+                <h2>Підготовчий етап — фундамент результату</h2>
+                <p>Перш ніж переходити до інтенсивних тренувань, організм потрібно підготувати. Це включає:</p>
+                
+                <ul class="article-list">
+                    <li>нормалізацію режиму сну (7–9 годин)</li>
+                    <li>поступове збільшення фізичної активності</li>
+                    <li>легкі функціональні тренування 2–3 рази на тиждень</li>
+                    <li>роботу з мобільністю та укріпленням корпусу</li>
+                </ul>
+
+                <p>На цьому етапі важливо не «вбити» себе навантаженням, а запустити правильні процеси: покращити обмін речовин, адаптувати серцево-судинну систему та підготувати суглоби.</p>
+            </article>
+
+            <!-- Section 2 -->
+            <article class="content-block">
+                <div class="section-number">02</div>
+                <h2>Харчування — 60–70% результату</h2>
+                <p>Навіть найкраща програма тренувань не допоможе, якщо відсоток жиру в організмі занадто високий. Кубики пресу є майже у кожного, але вони приховані під шаром жиру.</p>
+
+                <div class="highlight-box">
+                    <h3>Основні принципи:</h3>
+                    <ul class="article-list">
+                        <li>легкий дефіцит калорій (не голодування!)</li>
+                        <li>достатня кількість білка (1.6–2.2 г на кг ваги)</li>
+                        <li>мінімізація швидких вуглеводів і цукру</li>
+                        <li>достатнє споживання води</li>
+                    </ul>
+                </div>
+
+                <p>Без контролю харчування прес залишатиметься непомітним.</p>
+            </article>
+
+            <!-- Section 3 -->
+            <article class="content-block">
+                <div class="section-number">03</div>
+                <h2>Тренування: не тільки прес</h2>
+                <p>Помилка №1 — качати лише прес. Насправді ефективніший підхід:</p>
+
+                <ul class="article-list">
+                    <li>базові вправи (присідання, віджимання, тяги)</li>
+                    <li>кардіо 2–3 рази на тиждень</li>
+                    <li>функціональні комплекси</li>
+                    <li>вправи на глибокі м'язи корпусу (планки, вакуум)</li>
+                </ul>
+
+                <p>Прес працює майже у всіх базових вправах, тому комплексний підхід дає кращий результат, ніж ізольовані скручування.</p>
+            </article>
+
+            <!-- Section 4 -->
+            <article class="content-block">
+                <div class="section-number">04</div>
+                <h2>Поступове ускладнення</h2>
+                <p>Коли тіло адаптувалося, можна:</p>
+
+                <ul class="article-list">
+                    <li>збільшувати вагу</li>
+                    <li>скорочувати час відпочинку</li>
+                    <li>додавати інтервальні тренування</li>
+                    <li>ускладнювати вправи на прес</li>
+                </ul>
+
+                <p><strong>Головне — не поспішати.</strong> Різке збільшення навантаження часто призводить до перевтоми або травм.</p>
+            </article>
+
+            <!-- Section 5 -->
+            <article class="content-block">
+                <div class="section-number">05</div>
+                <h2>Чому «кубики» не видно?</h2>
+                <p>Є кілька причин, чому результат не з'являється:</p>
+
+                <div class="reasons-grid">
+                    <div class="reason-item">
+                        <div class="reason-icon">📊</div>
+                        <h4>Без дефіциту калорій</h4>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">🛑</div>
+                        <h4>Нерегулярні тренування</h4>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">😰</div>
+                        <h4>Високий рівень стресу</h4>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">😴</div>
+                        <h4>Недостатній сон</h4>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">⚕️</div>
+                        <h4>Гормональні порушення</h4>
+                    </div>
+                </div>
+
+                <p>Рельєфний прес — це не швидкий результат, а наслідок системної роботи.</p>
+            </article>
+
+            <!-- Conclusion -->
+            <article class="article-conclusion">
+                <h2>Висновок</h2>
+                <p>Кубики на животі — це не магія і не секретна вправа. Це поєднання правильно вибудуваного процесу:</p>
+                
+                <div class="conclusion-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <h4>Підготовка</h4>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <h4>Харчування</h4>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <h4>Тренування</h4>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <h4>Прогрес</h4>
+                    </div>
+                </div>
+
+                <p>Якщо працювати послідовно і не пропускати етапи, результат обов'язково з'явиться. <strong>Головне — не шукати коротких шляхів, а будувати міцний фундамент.</strong> 💪</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="article-cta">
+        <div class="cta-content">
+            <h2>Готові розпочати свій шлях до результату?</h2>
+            <p>Наша команда тренерів допоможе вам розробити індивідуальну програму тренувань та харчування</p>
+            <div class="cta-buttons">
+                <a href="index.html#team" class="btn-primary">Записатися на консультацію</a>
+                <a href="index.html#about" class="btn-secondary">Дізнатися більше</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="gridg">
+            <div class="element">
+                <img src="img/svg/phone.svg" alt="phone">
+                <p>Телефон:</p>
+                <h3>(098) 700 55 55</h3>
+            </div>
+            <div class="element">
+                <img src="img/svg/geo.svg" alt="geo">
+                <p>Локація:</p>
+                <h3>Кривий Ріг, вул. Єдності, 6</h3>
+            </div>
+            <div class="element">
+                <img src="img/svg/clock.svg" alt="geo">
+                <p>Графік роботи:</p>
+                <h3>Пн-Пт 7:00-20:00</h3>
+                <h3>Сб 9:00-19:00</h3>
+                <h3>Нд 09:00-18:00</h3>
+            </div>
+            <div class="social">
+                <p>Фітнес-тусовка:</p>
+                <div class="img-social">
+                    <img src="img/svg/inst.svg" alt="instagram">
+                    <img src="img/svg/faceb.svg" alt="facebook">
+                </div>
+            </div>
+            <a href="#team">Записатися</a>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
